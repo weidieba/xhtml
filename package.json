@@ -8,20 +8,11 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
     "vue": "^2.5.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -66,6 +57,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "validate-commit-msg": "^2.14.0",
     "vue-cli-plugin-commitlint": "^1.0.12",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
