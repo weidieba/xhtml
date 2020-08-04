@@ -53,10 +53,12 @@ module.exports = {
     assetsPublicPath: '/',
 
     /**
-     * Source Maps
+     * Source Maps maps打包后文件过大
+     * 用处如果运行时报错，输出的错误信息根本无法精确定位是哪里的代码报错。
+     * 但map文件就可以像未加密的代码一样，准确的输出是哪一行哪一列报错，这就是map文件的用处。
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
@@ -64,7 +66,11 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    // Gzip 文件压缩 true-开启 false -关闭
+    /* 
+      需要安装compression-webpack-plugin@1.1.1 插件不然会报错（需带上版本号，不然 下载最新版本webpack版本支持到4）
+    */
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
 
     // Run the build command with an extra argument to
