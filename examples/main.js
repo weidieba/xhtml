@@ -3,12 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-
+import ConfigRouter from './router.config'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+const router = new VueRouter(ConfigRouter)
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
-    components: { App },
+    router,
+    components: {App},
     template: '<App/>'
 })
