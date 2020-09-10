@@ -1,7 +1,7 @@
-let routers = []
-routers.push({
+let routes = []
+routes.push({
     path: '/test',
     name: 'test',
-    component: r => require.ensure([], () => r(require('./components/HelloWorld.vue')))
+    component: r => require.ensure([], () => r(require('./docs/test.md')))
 })
-export default routers
+export default routes

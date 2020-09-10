@@ -4,15 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import ConfigRouter from './router.config'
+import demoBlock from './components/demo-block.vue'
 import Xhtml from '../packages'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(Xhtml)
-const router = new VueRouter(ConfigRouter)
+Vue.component('demo-block', demoBlock)
+const router = new VueRouter({routes: ConfigRouter})
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    components: {App},
-    template: '<App/>'
-})
+    render (h) {
+        return h(App)
+    },
+    router
+}).$mount('#app')
